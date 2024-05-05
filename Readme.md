@@ -8,6 +8,11 @@ prátiacas de programação, qualidade de código, organização e algoritimos.
 Transformar dados vindos de coleção de arquivos json para diversos formatos de XML 
 para publicação em portais diversos de imóveis.
 
+O teste roda pelo comando
+```shell
+php index.php
+```
+
 ### Observações
 Os tipos de imóvel possíveis estão listados em ./database/types.json
 Após resolver o problema destes dois formatos de XML, muitos outros formatos de XML podem ser solicitados, 
