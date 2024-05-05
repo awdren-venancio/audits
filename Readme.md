@@ -2,16 +2,16 @@
 
 1. Efetue o fork deste repositório e crie um branch com o seu nome. (ex: ronaldo-rodrigues).
 2. Após finalizar o desafio, crie um Pull Request com o seu nome. (ex: ronaldo-rodrigues).
-3. Envie um e-mail para team@properfy.com.br com o link do seu repositorio publico.
+3. Envie um e-mail para team@properfy.com.br com o link do seu repositorio público.
 
 ### Teste de contratação
 
 O ojetivo deste teste é avaliar a sua capacidade técnica em boas 
-prátiacas de programação, qualidade de código, organização e algoritimos.
+práticas de programação, qualidade de código, organização e algoritimo.
 
 ### Descrição do teste
 
-Transformar dados vindos de coleção de arquivos json para diversos formatos de XML 
+Transformar dados vindos de coleção de arquivos .json para diversos formatos de XML, 
 para publicação em portais diversos de imóveis.
 
 O teste roda pelo comando
@@ -20,16 +20,16 @@ php index.php
 ```
 
 ### Observações
-Os tipos de imóvel possíveis estão listados em ./database/types.json
-Após resolver o problema destes dois formatos de XML, muitos outros formatos de XML podem ser solicitados, 
+* Os tipos de imóvel possíveis estão listados em ./database/types.json.
+* Após resolver o problema destes dois formatos de XML, muitos outros formatos de XML podem ser solicitados, 
 por isso, a solução deve ser escalável e de fácil manutenção.
-A solução deve ser feita dentro do namespace PlatformXMLBuilder.
-Os xml devem ser salvos na pasta ./cache/{$portal}.xml onde cada portal precisa de um unico xml com todos os imóveis.
-Outras bibliotecas externas só devem ser usadas para trazer beneficios ao projeto.
+* A solução deve ser feita dentro do namespace PlatformXMLBuilder.
+* Os XML devem ser salvos na pasta ./cache/{$portal}.xml onde cada portal precisa de um unico XML com todos os imóveis.
+* Outras bibliotecas externas só devem ser usadas para trazer benefícios claros ao projeto.
 
 ### Sugestão
-1. Utilizar a biblioteca spatie/array-to-xml
-2. Utilizar uma array string=>string para identificar os portais e classes onde o campo "publishFor" vai listar onde o imóvel deve ser publicado.
+* Utilizar a biblioteca spatie/array-to-xml
+* Utilizar uma array string=>string para identificar os portais e classes onde o campo "publishFor" vai listar onde o imóvel deve ser publicado.
 ```php
 <?php
 return [
@@ -38,7 +38,7 @@ return [
 ];
 ```
 
-3. A hierarquia de pastas de arquivos pode ser a seguinte:
+* A hierarquia de pastas de arquivos pode ser a seguinte:
 ```shell
 PlatformXMLBuilder
     - Platforms
