@@ -3,6 +3,7 @@
 1. Efetue o fork deste repositório e crie um branch com o seu nome. (ex: ronaldo-rodrigues).
 2. Após finalizar o desafio, crie um Pull Request com o seu nome. (ex: ronaldo-rodrigues).
 3. Envie um e-mail para team@properfy.com.br com o link do seu repositorio público.
+4. Em caso de dúvidas sobre algum ponto da execução do teste, fique à vontade para entrar em contato com Moyses, pelo WhatsApp (41) 99144-7308
 
 ### Teste de contratação
 
