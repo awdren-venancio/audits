@@ -8,7 +8,7 @@ require 'vendor/autoload.php';
 
 $builders = require 'config/builders.php';
 
-$properties = []; // carregar os dados dos arquivos JSON
+$properties = [];
 
 const BASE_PATH = __DIR__;
 $collection = glob(BASE_PATH.'/database/properties/*.json');
@@ -24,3 +24,4 @@ foreach ($builders as $portal => $builderClass) {
 }
 
 echo 'solução finalizada!';
+

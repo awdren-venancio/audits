@@ -3,43 +3,11 @@
 namespace PlatformXMLBuilder\Platforms\Rentify;
 
 use PlatformXMLBuilder\Platforms\Contracts\XMLBuilderInterface;
-use PlatformXMLBuilder\Platforms\Helpers\XMLHelper;
+use PlatformXMLBuilder\Platforms\Helpers\RentifyHelper;
 use Spatie\ArrayToXml\ArrayToXml;
 
 class RentifyXMLBuilder implements XMLBuilderInterface
 {
-    public function propertyTypeConvert (string $propertyTypeEnglish): string
-    {
-        $typeEnglishToPortuguese = [
-            "HOUSE"       => 'CASA',
-            "APARTMENT"   => 'APARTAMENTO',
-            "STORE"       => 'LOJA',
-            "PENTHOUSE"   => 'COBERTURA',
-        ];
-
-        return $typeEnglishToPortuguese[$propertyTypeEnglish];
-    }
-
-    public function propertyForSaleRentConvert (bool $propertyForSale, bool $propertyForRent): string
-    {
-        if ($propertyForSale && $propertyForRent) 
-        {
-            return 'Venda e Locação';
-        }
-
-        if ($propertyForSale && !$propertyForRent)
-        {
-            return 'Venda';
-        }
-
-        if (!$propertyForSale && $propertyForRent)
-        {
-            return 'Locação';
-        }
-
-        return '';
-    }
-
     public function buildXML(array $properties): string
     {
         $imoveis = [];
@@ -59,8 +27,8 @@ class RentifyXMLBuilder implements XMLBuilderInterface
                 'anoConstrucao'       => $property['buildYear'],
                 'contatoTelefone'     => $property['realStatePhone'],
                 'referencia'          => $property['propertyRefence'],
-                'tipoImovel'          => $this->propertyTypeConvert($property['propertyType']),
-                'disponibilidade'     => $this->propertyForSaleRentConvert($property['propertyForSale'], $property['propertyForRent']),
+                'tipoImovel'          => RentifyHelper::getTipoImovel($property['propertyType']),
+                'disponibilidade'     => RentifyHelper::getDisponibilidade($property['propertyForSale'], $property['propertyForRent']),
                 'valorVenda'          => $property['propertySalesPrice'],
                 'valorLocacao'        => $property['propertyRentPrice'],
                 'enderecoRua'         => $property['addressStreet'],

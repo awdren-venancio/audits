@@ -3,7 +3,6 @@
 namespace PlatformXMLBuilder\Platforms\Estatify;
 
 use PlatformXMLBuilder\Platforms\Contracts\XMLBuilderInterface;
-use PlatformXMLBuilder\Platforms\Helpers\XMLHelper;
 use Spatie\ArrayToXml\ArrayToXml;
 
 class EstatifyXMLBuilder implements XMLBuilderInterface
@@ -11,7 +10,6 @@ class EstatifyXMLBuilder implements XMLBuilderInterface
     public function buildXML(array $properties): string
     {
         $collection = [];
-
         
         foreach ($properties as $property) {
             
